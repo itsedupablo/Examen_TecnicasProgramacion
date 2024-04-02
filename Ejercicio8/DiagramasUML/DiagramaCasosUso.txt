@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+actor Usuario as u
+rectangle "Gestión del Grafo" {
+    usecase "Obtener matriz de adyacencia" as uma
+    usecase "Realizar DFS" as dfs
+    usecase "Realizar Dijkstra" as dijkstra
+    usecase "Eliminar puerto con más aristas" as elim
+}
+
+u --> uma
+u --> dfs
+u --> dijkstra
+u --> elim
+@enduml

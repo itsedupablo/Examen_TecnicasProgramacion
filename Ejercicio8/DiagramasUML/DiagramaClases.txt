@@ -1,0 +1,45 @@
++@startuml
+
+class Puerto {
+    -id: int
+    -nombre: String
+
+    +Puerto(int id, String nombre)
+    +getId(): int
+    +getNombre(): String
+}
+
+class Ruta {
+    -origen: Puerto
+    -destino: Puerto
+    -distancia: int
+
+    +Ruta(Puerto origen, Puerto destino, int distancia)
+    +getOrigen(): Puerto
+    +getDestino(): Puerto
+    +getDistancia(): int
+}
+
+class Grafo {
+    -numPuertos: int
+    -nombrePuertos: Map<Integer, String>
+    -matrizAdyacencia: int[][]
+
+    +Grafo(int numPuertos)
+    +getNumPuertos(): int
+    +getNombrePuerto(int idPuerto): String
+    +setNombrePuerto(int idPuerto, String nombre): void
+    +getMatrizAdyacencia(): int[][]
+    +agregarRuta(Puerto origen, Puerto destino, int distancia): void
+    +eliminarRuta(Puerto origen, Puerto destino): void
+    +dfs(int inicio): void
+    +dijkstra(int origen, int destino): void
+    +eliminarPuertoConMasAristas(): int
+}
+
+
+Ruta --> Puerto
+Grafo --> Puerto
+Grafo --> Ruta
+
+@enduml

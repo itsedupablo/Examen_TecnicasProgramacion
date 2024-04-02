@@ -1,0 +1,22 @@
+@startuml
+start
+:Crear puertos;
+:Crear grafo;
+repeat
+  :Mostrar menú;
+  :Seleccionar opción;
+  if (Opción == Obtener matriz de adyacencia) then (true)
+    :Obtener matriz de adyacencia;
+  elseif (Opción == Realizar DFS) then (true)
+    :Realizar DFS;
+  elseif (Opción == Realizar Dijkstra) then (true)
+    :Realizar Dijkstra;
+  elseif (Opción == Eliminar puerto con más aristas) then (true)
+    :Eliminar puerto con más aristas;
+  else (false)
+    :Salir;
+    stop
+  endif
+repeat while (Opción != Salir)
+stop
+@enduml
