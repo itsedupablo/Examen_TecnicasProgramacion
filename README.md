@@ -29,16 +29,58 @@ Para crear las instancias de cada tipo de barco se ha decidido la utilización d
 Finalmente se ha creado la clase **HundirLaFlota**, la cual contiene el método main y permite al usuario jugar partidas del juego introduciendo las coordenadas del tablero del contrincante.
 ### Pseudocódigo del main:
 ```
-Inicio
-   - Crear e inicializar instancias de jugadores (1 y 2)
-   - Crear e inicializar instancias de tableros (1 y 2)
-   - Crear barcos para cada jugador
-   - Colocar barcos en el tablero de cada jugador
-   - Mientras niguno de los jugadores haya perdido seguir jugando
-   - Si uno de los jugadores ha perdido:
+Función main(String[] args):
+   Crear e inicializar instancias de jugadores (1 y 2)
+   Crear e inicializar instancias de tableros (1 y 2)
+   Crear barcos para cada jugador --> Función crearBarcos(Jugador jugador)
+   Colocar barcos en el tablero de cada jugador
+   Mientras niguno de los jugadores haya perdido --> Función realizarMovimiento(Jugador atacante, Tablero tableroOponente)
+   Si uno de los jugadores ha perdido:
         Mostrar "¡El Jugador X ha ganado!"
         Mostrar "Tablero del jugador Y"
-Fin
+
+Función crearBarcos(Jugador jugador):
+    Crear e inicializar "concrete factories"
+    Crear e inicializar Lista: barcos
+    # Crear 1 battleship, 2 frigates y 3 canoes:
+    barcos.add(factoriasConcretas.crearBarco())
+      para cada barco en barcos:
+           jugador.addBarco(barco)
+
+Función realizarMovimiento(atacante, tableroOponente):
+    Mostrar tableroOponente
+    
+    inputValido = Falso
+    fila = 0
+    columna = 0
+
+    Mientras no haya una entrada válida:
+        Intentar:
+            Mostrar "Ingresa las coordenadas del ataque (fila columna): "
+            Leer fila y columna desde la entrada estándar
+            inputValido = Verdadero
+        Capturar InputMismatchException:
+            Mostrar "Entrada inválida. Debe ingresar números enteros."
+            Leer y descartar la entrada incorrecta
+        
+    Si la fila o columna están fuera del rango del tablero:
+        Mostrar "Coordenadas inválidas (se salen de rango). Inténtalo de nuevo."
+        Realizar un nuevo movimiento(atacante, tableroOponente)
+        Devolver
+        
+    tableroOponenteArray = Obtener el array de tablero de tableroOponente
+    Si el elemento en la fila y columna del tableroOponenteArray está OCUPADO:
+        Mostrar "¡Impacto! El ataque fue exitoso."
+        Por cada barco en los barcos de atacante:
+            Si el barco recibe el ataque en la fila y columna:
+                Salir del bucle
+    Sino:
+        Mostrar "¡Agua! El ataque fue fallido."
+        Marcar el elemento en la fila y columna del tableroOponenteArray como 'O'
+        Actualizar el tableroOponente con tableroOponenteArray
+
+   
+
 ```
 ### Enlace a código y diagramas UML: https://github.com/itsedupablo/Examen_TecnicasProgramacion/tree/main/Ejercicios5-6
 ## Ejercicio 8
