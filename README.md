@@ -49,11 +49,6 @@ Función crearBarcos(Jugador jugador):
 
 Función realizarMovimiento(atacante, tableroOponente):
     Mostrar tableroOponente
-    
-    inputValido = Falso
-    fila = 0
-    columna = 0
-
     Mientras no haya una entrada válida:
         Intentar:
             Mostrar "Ingresa las coordenadas del ataque (fila columna): "
@@ -78,9 +73,6 @@ Función realizarMovimiento(atacante, tableroOponente):
         Mostrar "¡Agua! El ataque fue fallido."
         Marcar el elemento en la fila y columna del tableroOponenteArray como 'O'
         Actualizar el tableroOponente con tableroOponenteArray
-
-   
-
 ```
 ### Enlace a código y diagramas UML: https://github.com/itsedupablo/Examen_TecnicasProgramacion/tree/main/Ejercicios5-6
 ## Ejercicio 8
