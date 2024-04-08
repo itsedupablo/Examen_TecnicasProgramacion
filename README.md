@@ -1,4 +1,5 @@
 # Examen_TecnicasProgramacion
+### AVISO: En el zip faltan las clases de los ejercicios 5,6 y 7 ya que se añadieron al repositorio pasada la fecha de entrega
 ### Enlace al repositorio: https://github.com/itsedupablo/Examen_TecnicasProgramacion
 ## Ejercicio 8
 ### Descipción
