@@ -1,6 +1,46 @@
 # Examen_TecnicasProgramacion
 ### AVISO: En el zip faltan las clases de los ejercicios 5,6 y 7 ya que se añadieron al repositorio pasada la fecha de entrega
 ### Enlace al repositorio: https://github.com/itsedupablo/Examen_TecnicasProgramacion
+## Ejercicio 5 
+### Descipción
+Se propone una extensión del juego hundir la flota en la que, en vez de jugar con un solo tipo de barco, se pueda jugar con tres tipos de barcos diferentes. Estos tres tipos diferentes de barcos van a ser acorazados (Battleship), fragatas (Frigates), y canoas (Canoes).
+En base a estas especificaciones se solicita que:
+Programe una clase Battleship. Este barco es grande y fuerte con un tamaño fijo (es decir, su tamaño va a ser igual a 5 posiciones del tablero). Además, este barco especial tiene contenedores aislados, por lo tanto, necesita que toquen todas sus posiciones aisladas para hundirlo y requiere de la creación de los atributos correspondientes para controlar esta casuística. La implementación al ser atacado deberá ser modificada.
+Programe una clase Frigate. Este barco es mediano con un tamaño fijo (es decir, su tamaño va a ser igual a 3 posiciones del tablero).
+Programe una clase Canoe. Este barco es pequeño con un tamaño fijo (es decir, su tamaño va a ser igual a 1 posiciones del tablero).
+Reutilize tanto código como sea posible del ejercicio 4 para hacer esta extensión del juego.
+No es necesario implementar el docString correspondiente a las funciones y métodos desarrollados, aunque se recomienda hacerlo para facilitar la comprensión por parte del 
+estudiante.
+## Ejercicio 6 
+### Descipción
+En este ejercicio se pide que se implemente el módulo principal del juego hundir la flota. Este módulo va a implementar la partida que van a jugar los jugadores.
+En este módulo main, lo primero que se hace es obtener la configuración deseada de los barcos por parte de cada usuario sobre el tablero. Hay que tener en cuenta, que cada usuario solamente va a tener como máximo tres barcos en el tablero al iniciar la partida. La configuración de cada usuario va a ser introducida por consola
+Seguidamente, una vez que se tienen las configuraciones, el juego puede comenzar entre los jugadores. En cada turno cada jugador va a atacar al otro jugador en una posición aleatoria. Cuando uno de los dos usuarios tenga ya todos sus barcos hundidos al acabar el turno, se acaba el juego y se indica quien es el ganador. En el caso de que los dos acaben sin barcos en el mismo turno, el juego indicará un empate. En cada turno los dos usuarios atacan con independencia de si sus barcos están hundidos.
+Recuerde utilizar las clases implementadas tanto en el ejercicio 4 como en el ejercicio 5 para implementar todos los componentes de este juego.
+El diagrama de flujo de este módulo principal le ha sido proporcionado a modo de guía.
+### Implementación código ejercicios 5 y 6.
+Para realizar este ejercicio he reciclado el ejercicio de hundir la flota que hice en una de las entregas, que contaba con las siguientes clases:
+1. Barco. Clase que permite crear instancias de tipo barco
+2. Jugador. Clase que permite crear instancias de tipo jugador
+3. Tablero. Clase que permite crear un tablero para cada jugador de la partida.
+En primer lugar modificamos la clase barco y la hacemos de tipo abstracto para impedir la creación de instancias de ese tipo y poder hacer subclases que hereden.
+A continuación creamos las clases Battleship, Frigate y Canoe que nos permiten crear instancias especializadas de tipo Barco.
+Para crear las instancias de cada tipo de barco se ha decidido la utilización del modelo creacional "Abstract Factory", con lo que se ha creado un interfaz **ShipFactory** que será implementada por las clases **BattleshipFactory**, **FrigateFactory** y **CanoeFactory**, que son fábricas concretas que crearán cada tipo de barco según se necesite.
+Finalmente se ha creado la clase **HundirLaFlota**, la cual contiene el método main y permite al usuario jugar partidas del juego introduciendo las coordenadas del tablero del contrincante.
+### Pseudocódigo del main:
+```
+Inicio
+   - Crear e inicializar instancias de jugadores (1 y 2)
+   - Crear e inicializar instancias de tableros (1 y 2)
+   - Crear barcos para cada jugador
+   - Colocar barcos en el tablero de cada jugador
+   - Mientras niguno de los jugadores haya perdido seguir jugando
+   - Si uno de los jugadores ha perdido:
+        Mostrar "¡El Jugador X ha ganado!"
+        Mostrar "Tablero del jugador Y"
+Fin
+```
+### Enlace a código y diagramas UML: 
 ## Ejercicio 8
 ### Descipción
 Implementar un grafo no dirigido que permita cargar puertos y las aristas que conecten dichos puertos, que permita resolver las siguientes tareas:
