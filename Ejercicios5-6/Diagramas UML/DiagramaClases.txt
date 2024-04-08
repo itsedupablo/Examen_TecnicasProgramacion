@@ -1,0 +1,94 @@
+@startuml
+
+abstract class Barco {
+    - size: int
+    - posicion: int[]
+    - orientacion: boolean
+    - hundido: boolean
+    + Barco(size: int)
+    + getSize(): int
+    + setSize(size: int): void
+    + getPosición(): int[]
+    + setPosición(posición: int[]): void
+    + isOrientacion(): boolean
+    + setOrientacion(orientacion: boolean): void
+    + isEstado(): boolean
+    + setEstado(estado: boolean): void
+    + recibirAtaque(fila: int, columna: int): boolean
+}
+
+class Battleship {
+    + Battleship(size: int)
+}
+
+class Frigate {
+    + Frigate(size: int)
+}
+
+class Canoe {
+    + Canoe(size: int)
+}
+
+class Jugador {
+    - nombre: String
+    - tablero: Tablero
+    - barcos: List<Barco>
+    + Jugador(nombre: String)
+    + getNombre(): String
+    + getTablero(): Tablero
+    + setTablero(tablero: Tablero): void
+    + getBarcos(): List<Barco>
+    + addBarco(barco: Barco): void
+    + haPerdido(): boolean
+}
+
+class Tablero {
+    - tablero: char[][]
+    - size: int
+    + VACIO: char
+    + OCUPADO: char
+    + Tablero(size: int)
+    + getSize(): int
+    + setSize(size: int): void
+    + inicializarTablero(): void
+    + colocarBarcos(barcos: List<Barco>): void
+    + verificarEspacioDisponible(fila: int, columna: int, size: int, orientacionHorizontal: boolean): boolean
+    + posicionarBarco(fila: int, columna: int, size: int, orientacionHorizontal: boolean): void
+    + getTablero(): char[][]
+    + setTablero(tablero: char[][]): void
+    + mostrarTablero(): void
+    + mostrarTableroPropio(): void
+}
+
+interface ShipFactory {
+    + crearBarco(): Barco
+}
+
+class BattleShipFactory {
+    + crearBarco(): Barco
+}
+
+class FrigateFactory {
+    + crearBarco(): Barco
+}
+
+class CanoeFactory {
+    + crearBarco(): Barco
+}
+ShipFactory <|.. BattleShipFactory
+ShipFactory <|.. FrigateFactory
+ShipFactory <|.. CanoeFactory
+
+BattleShipFactory  --> Battleship 
+FrigateFactory  --> Frigate 
+CanoeFactory  --> Canoe
+
+Battleship --|> Barco
+Frigate --|> Barco
+Canoe --|> Barco
+
+Jugador -- Tablero
+Jugador -- Barco
+
+
+@enduml

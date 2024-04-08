@@ -1,0 +1,12 @@
+@startuml
+
+left to right direction
+actor Jugador1 as "Jugador 1"
+actor Jugador2 as "Jugador 2"
+
+Jugador1 --> (Jugar)
+Jugador2 --> (Jugar)
+(Jugar) --> (Realizar Movimiento)
+(Realizar Movimiento) --> (Ingresar coordenadas)
+
+@enduml

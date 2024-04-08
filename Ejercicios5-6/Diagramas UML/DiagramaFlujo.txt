@@ -1,0 +1,25 @@
+@startuml
+
+start
+:Crear jugadores;
+:Crear tableros de juego;
+:Inicializar tableros;
+:Colocar barcos en los tableros;
+while (ningún jugador ha perdido) is (Juego) 
+    :Turno del Jugador 1;
+    :Realizar movimiento;
+    if (ha perdido jugador2) then (jugador2)
+        :Determinar el ganador;
+        :Fin del juego;
+    else (continuar)
+        :Turno del Jugador 2;
+        :Realizar movimiento;
+        if (ha perdido jugador1) then (jugador1)
+            :Determinar el ganador;           
+        :Fin del juego;
+        endif
+    endif
+endwhile (Juego)
+stop
+
+@enduml
