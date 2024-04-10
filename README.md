@@ -75,6 +75,25 @@ Función realizarMovimiento(atacante, tableroOponente):
         Actualizar el tableroOponente con tableroOponenteArray
 ```
 ### Enlace a código y diagramas UML: https://github.com/itsedupablo/Examen_TecnicasProgramacion/tree/main/Ejercicios5-6
+## Ejercicio 7
+### Descipción
+Escribir un algoritmo que permita utilizar tres tablas hash para guardar los datos de barcos, que contemple las siguientes actividades:
+a. En la primera tabla hash la función hash debe ser sobre el tipo de barco, en la segunda tabla la función hash deberá utilizar el número del barco como clave, mientras que en la tercera el campo clave de la función hash será por el nombre del barco.
+b. El tamaño de la primera tabla debe ser lo suficientemente grande como para que pueda almacenar todos los distintos tipos de barcos, debe manejar las colisiones con alguna función de sondeo.
+c. El tamaño de cada una de las segundas tablas debe ser 15.
+d. El algoritmo debe permitir cargar tipos de barcos en la primera tabla y crear su respectiva segunda tabla, en el caso de que no exista.
+e. Si el barco es de más de un tipo deberá cargarlo en cada una de las tablas que indiquen estos tipos.
+f. Deberá permitir cargar barcos de los cuales se dispone de su número, nombre, tipo y nivel.
+### Implementación código
+Para realizar este ejercicio se ha reciclado el código del ejercicio de hundir la flota pero se le hacen algunas modificaciones.
+- 1. Se añaden los atributos tipo, número de barco, nombre y nivel a la clase **Barco**.
+- 2. Se hace instanciable la clase barco para poder crear barcos sin tipo específico.
+- 3. Se añade el método toString a la clase **Barco**.
+Además se añade la clase **GestionBarcos** donde se crean y utilizan las tablas indicadas en el enunciado. Se crean además 3 métodos:
+- **funcionHash**. Genera un número entero que determinará el índice una tabla determinada donde se cargará un barco, según la clave.
+- **addBarco**. Permite añadir un barco a todas las tablas según distintos criterios.
+- **Main**. Se prueba el programa.
+
 ## Ejercicio 8
 ### Descipción
 Implementar un grafo no dirigido que permita cargar puertos y las aristas que conecten dichos puertos, que permita resolver las siguientes tareas:
