@@ -86,9 +86,9 @@ e. Si el barco es de más de un tipo deberá cargarlo en cada una de las tablas 
 f. Deberá permitir cargar barcos de los cuales se dispone de su número, nombre, tipo y nivel.
 ### Implementación código
 Para realizar este ejercicio se ha reciclado el código del ejercicio de hundir la flota pero se le hacen algunas modificaciones.
-- 1. Se añaden los atributos tipo, número de barco, nombre y nivel a la clase **Barco**.
-- 2. Se hace instanciable la clase barco para poder crear barcos sin tipo específico.
-- 3. Se añade el método toString a la clase **Barco**.
+1. Se añaden los atributos tipo, número de barco, nombre y nivel a la clase **Barco**.
+2. Se hace instanciable la clase barco para poder crear barcos sin tipo específico.
+3. Se añade el método toString a la clase **Barco**.
 Además se añade la clase **GestionBarcos** donde se crean y utilizan las tablas indicadas en el enunciado. Se crean además 3 métodos:
 - **funcionHash**. Genera un número entero que determinará el índice una tabla determinada donde se cargará un barco, según la clave.
 - **addBarco**. Permite añadir un barco a todas las tablas según distintos criterios.
