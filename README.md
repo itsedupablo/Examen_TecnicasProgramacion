@@ -1,5 +1,5 @@
 # Examen_TecnicasProgramacion
-### AVISO: En el zip faltan las clases de los ejercicios 5,6 y 7 ya que se añadieron al repositorio pasada la fecha de entrega
+### AVISO: En el zip faltan el código java y diagramas UML de los ejercicios 5,6 y 7 ya que se añadieron al repositorio pasada la fecha de entrega establecida.
 ### Enlace al repositorio: https://github.com/itsedupablo/Examen_TecnicasProgramacion
 ## Ejercicio 5 
 ### Descipción
