@@ -1,5 +1,5 @@
 # Examen_TecnicasProgramacion
-### AVISO: En el zip faltan el código java y diagramas UML de los ejercicios 5,6 y 7 ya que se añadieron al repositorio pasada la fecha de entrega establecida.
+### AVISO: En el zip faltan el código java y diagramas UML de los ejercicios 5, 6 y 7 ya que se añadieron al repositorio pasada la fecha de entrega establecida.
 ### Enlace al repositorio: https://github.com/itsedupablo/Examen_TecnicasProgramacion
 ## Ejercicio 5 
 ### Descipción
@@ -89,6 +89,7 @@ Para realizar este ejercicio se ha reciclado el código del ejercicio de hundir 
 1. Se añaden los atributos tipo, número de barco, nombre y nivel a la clase **Barco**.
 2. Se hace instanciable la clase barco para poder crear barcos sin tipo específico.
 3. Se añade el método toString a la clase **Barco**.
+4. Se eliminan los atributos y métodos que no van a usarse (getters, setters, etc)
 Además se añade la clase **GestionBarcos** donde se crean y utilizan las tablas indicadas en el enunciado. Se crean además 3 métodos:
 - **funcionHash**. Genera un número entero que determinará el índice una tabla determinada donde se cargará un barco, según la clave.
 - **addBarco**. Permite añadir un barco a todas las tablas según distintos criterios.
