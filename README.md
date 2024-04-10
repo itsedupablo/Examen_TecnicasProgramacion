@@ -92,7 +92,7 @@ Para realizar este ejercicio se ha reciclado el código del ejercicio de hundir 
 Además se añade la clase **GestionBarcos** donde se crean y utilizan las tablas indicadas en el enunciado. Se crean además 3 métodos:
 - **funcionHash**. Genera un número entero que determinará el índice una tabla determinada donde se cargará un barco, según la clave.
 - **addBarco**. Permite añadir un barco a todas las tablas según distintos criterios.
-- **Main**. Se prueba el programa.
+Además se cuenta con un método **main** para poder probar el funcionamiento del programa.
 
 ## Ejercicio 8
 ### Descipción
