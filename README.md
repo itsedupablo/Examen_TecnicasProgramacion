@@ -93,7 +93,23 @@ Además se añade la clase **GestionBarcos** donde se crean y utilizan las tabla
 - **funcionHash**. Genera un número entero que determinará el índice una tabla determinada donde se cargará un barco, según la clave.
 - **addBarco**. Permite añadir un barco a todas las tablas según distintos criterios.
 Además se cuenta con un método **main** para poder probar el funcionamiento del programa.
+### Pseudocódigo del algoritmo (función hash)
+```
+funcionHash(Objecto clave, int tamaño de la tabla):
+	    entero hash <- 0
 
+	    si clave es null:
+	        devolver 0; 
+	     si clave es un número entero:
+            hash <- clave
+	     si clave es una cadena str:
+	        desde i = 0 hasta longitud de la cadena, incrementando i en 1:
+	            hash <- 31 * hash + caracter de la cadena en cada it
+        si no:
+	        hash <- clave.hashCode()
+	    
+       devolver hash % tamaño de la tabla	
+```
 ## Ejercicio 8
 ### Descipción
 Implementar un grafo no dirigido que permita cargar puertos y las aristas que conecten dichos puertos, que permita resolver las siguientes tareas:
