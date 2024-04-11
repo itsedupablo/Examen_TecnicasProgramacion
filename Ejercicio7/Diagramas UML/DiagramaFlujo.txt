@@ -1,0 +1,15 @@
+@startuml
+title GestionBarcos
+
+start
+:Crear tablas hash;
+:Crear fábricas;
+repeat
+  :Leer datos de barco;
+  :Generar función hash;
+  :Agregar barco a las tablas hash;
+repeat while (Hay más barcos?)
+:Mostrar tablas;
+stop
+
+@enduml

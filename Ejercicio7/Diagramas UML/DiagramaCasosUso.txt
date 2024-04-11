@@ -1,0 +1,10 @@
+@startuml
+actor Usuario as U
+rectangle GestionBarcos {
+  usecase "Crear barcos" as UC1
+  usecase "Agregar barcos a las tablas" as UC2
+
+}
+U --> UC1: Utilizar
+U --> UC2: Utilizar
+@enduml
