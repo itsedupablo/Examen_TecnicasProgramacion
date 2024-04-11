@@ -111,7 +111,7 @@ funcionHash(Objecto clave, int tamaño de la tabla):
 	    
        devolver hash % tamaño de la tabla	
 ```
-### Enlace a código y diagramas UML:
+### Enlace a código y diagramas UML: https://github.com/itsedupablo/Examen_TecnicasProgramacion/tree/main/Ejercicio7
 ## Ejercicio 8
 ### Descipción
 Implementar un grafo no dirigido que permita cargar puertos y las aristas que conecten dichos puertos, que permita resolver las siguientes tareas:
